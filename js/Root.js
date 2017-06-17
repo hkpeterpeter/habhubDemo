@@ -4,6 +4,10 @@ import { Platform } from 'react-native';
 // Reference: https://github.com/react-community/react-navigation/blob/master/examples/NavigationPlayground/js/App.js
 import { StackNavigator } from 'react-navigation';
 
+import { Provider } from 'react-redux';
+import store from './store';
+
+
 import Home from './components/Home';
 import Login from './components/Login';
 
@@ -20,8 +24,7 @@ const habhubRoutes = {
   },
 };
 
-
-const Root = StackNavigator(
+const RootNavigator = StackNavigator(
   {
     ...habhubRoutes,
   },
@@ -32,4 +35,9 @@ const Root = StackNavigator(
   },
 );
 
-export default () => <Root />;
+
+export default () => (
+  <Provider store={store}>
+    <RootNavigator />
+  </Provider>
+);
