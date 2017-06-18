@@ -1,5 +1,8 @@
 const ActionTypes = {
   ADD_USER: 'ADD_USER',
+  SET_USER_ID: 'SET_USER_ID',
+  ADD_EXERCISE_TEMPLATE: 'ADD_EXERCISE_TEMPLATE',
+  ADD_EXERCISE: 'ADD_EXERCISE',
 };
 
 export default ActionTypes;

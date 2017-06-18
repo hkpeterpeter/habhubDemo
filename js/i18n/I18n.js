@@ -13,4 +13,6 @@ I18n.translations = {
   cn,
 };
 
+I18n.locale = 'zh';
+
 export default I18n;

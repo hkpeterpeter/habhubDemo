@@ -10,6 +10,7 @@ import store from './store';
 
 import Home from './components/Home';
 import Login from './components/Login';
+import Settings from './components/Settings';
 
 const habhubRoutes = {
   Login: {
@@ -21,6 +22,11 @@ const habhubRoutes = {
     name: 'Home',
     description: 'The home page',
     screen: Home,
+  },
+  Settings: {
+    name: 'Settings',
+    description: 'The setting page',
+    screen: Settings,
   },
 };
 
