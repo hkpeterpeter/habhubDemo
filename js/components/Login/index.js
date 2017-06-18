@@ -32,9 +32,9 @@ import { setUserID } from '../../actions/client';
 import { habhubLogo } from '../../asset';
 
 const languageOptions = [
-  'English',  // Index: 0
-  '䌓體中文',  // Index: 1
-  '简体中文',  // Index: 2
+  '🇺🇸 English',  // Index: 0
+  '🇹🇼 䌓體中文',  // Index: 1
+  '🇨🇳 简体中文',  // Index: 2
   'Cancel',
 ];
 const languageOptionsCancelIndex = languageOptions.length - 1;
@@ -195,11 +195,12 @@ class Login extends Component { // eslint-disable-line
 
           <Button
             block
+            bordered
             info
             style={styles.mb}
             onPress={() => this.showActionSheet()}
           >
-            <Text>{I18n.t('changeLocale')}</Text>
+            <Text>{I18n.t('changeLocale')} 🇺🇸 🇹🇼 🇨🇳 </Text>
           </Button>
           <ActionSheet ref={(c) => { this.actionSheet = c; }} />
 

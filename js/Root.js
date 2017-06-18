@@ -11,22 +11,44 @@ import store from './store';
 import Home from './components/Home';
 import Login from './components/Login';
 import Settings from './components/Settings';
+import ExerciseList from './components/ExerciseList';
+import Achievements from './components/Achievements';
+import Progress from './components/Progress';
+import PatientManagement from './components/PatientManagement';
+import FamilyEncouragement from './components/FamilyEncouragement';
 
 const habhubRoutes = {
   Login: {
     name: 'Login',
-    description: 'The login page',
     screen: Login,
   },
   Home: {
     name: 'Home',
-    description: 'The home page',
     screen: Home,
   },
   Settings: {
     name: 'Settings',
-    description: 'The setting page',
     screen: Settings,
+  },
+  ExerciseList: {
+    name: 'ExerciseList',
+    screen: ExerciseList,
+  },
+  Achievements: {
+    name: 'Achievements',
+    screen: Achievements,
+  },
+  Progress: {
+    name: 'Progress',
+    screen: Progress,
+  },
+  PatientManagement: {
+    name: 'PatientManagement',
+    screen: PatientManagement,
+  },
+  FamilyEncouragement: {
+    name: 'FamilyEncouragement',
+    screen: FamilyEncouragement,
   },
 };
 

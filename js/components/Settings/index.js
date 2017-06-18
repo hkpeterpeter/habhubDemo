@@ -30,9 +30,9 @@ const resetAction = NavigationActions.reset({
 });
 
 const languageOptions = [
-  'English',  // Index: 0
-  '䌓體中文',  // Index: 1
-  '简体中文',  // Index: 2
+  '🇺🇸 English',  // Index: 0
+  '🇹🇼 䌓體中文',  // Index: 1
+  '🇨🇳 简体中文',  // Index: 2
   'Cancel',
 ];
 const languageOptionsCancelIndex = languageOptions.length - 1;
@@ -108,13 +108,14 @@ class Settings extends Component { // eslint-disable-line
 
           <Button
             iconLeft
+            bordered
             info
             block
             style={styles.mb}
             onPress={() => this.showActionSheet()}
           >
             <Icon name="chatbubbles" />
-            <Text>{I18n.t('changeLocale')}</Text>
+            <Text>{I18n.t('changeLocale')} 🇺🇸 🇹🇼 🇨🇳 </Text>
           </Button>
           <ActionSheet ref={(c) => { this.actionSheet = c; }} />
 

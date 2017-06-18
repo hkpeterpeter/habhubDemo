@@ -7,9 +7,11 @@ const familyImage = require('../../img/family.png');
 
 const exerciseImage = require('../../img/patient-feature-exercise.png');
 const achievementsImage = require('../../img/patient-feature-achievements.png');
+const progressImage = require('../../img/patient-feature-progress.png');
 
 const patientManagementImage = require('../../img/therapist-feature-patient-management.png');
 const encouragementImage = require('../../img/family-feature-encouragement.png');
+
 
 
 const exerciseLowerLimbVideo = require('../../video/exercise-lower-limb.mp4');
@@ -36,4 +38,5 @@ export {
   achievementsImage,
   patientManagementImage,
   encouragementImage,
+  progressImage,
 };

@@ -11,15 +11,18 @@ const zh = {
   password: '密碼',
   login: '登入',
   register: '註册',
-  changeLocale: '改變語言',
+  changeLocale: '語言',
   selectLanguage: '選擇語言',
   cancel: '取消',
 
   // Component: Home
   titleHome: '主頁',
 
+  // Component: Progress
+  titleProgress: '進度',
+
   // Component: Achievements
-  titleAchivements: '成就',
+  titleAchievements: '成就',
 
   // Component: ExerciseList
   titleExerciseList: '活動列表',

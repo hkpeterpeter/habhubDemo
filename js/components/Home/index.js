@@ -31,12 +31,14 @@ import {
   achievementsImage,
   patientManagementImage,
   encouragementImage,
+  progressImage,
 } from '../../asset';
 
 const makeCard = (key, text, image, route) => ({ key, text, image, route });
 const patientCards = [
   makeCard('card0', 'titleExerciseList', exerciseImage, 'ExerciseList'),
-  makeCard('card1', 'titleAchivements', achievementsImage, 'Achievements'),
+  makeCard('card1', 'titleProgress', progressImage, 'Progress'),
+  makeCard('card2', 'titleAchievements', achievementsImage, 'Achievements'),
 ];
 const therapistCards = [
   makeCard('card0', 'titlePatientManagement', patientManagementImage, 'PatientManagement'),
@@ -140,6 +142,7 @@ class Home extends Component { // eslint-disable-line
               cardBody
               button
               style={styles.cardImageWrapper}
+              onPress={() => navigation.navigate(card.route, { refresh: () => { this.forceUpdate(); } })}
             >
               <Image
                 source={card && card.image}
@@ -159,7 +162,16 @@ class Home extends Component { // eslint-disable-line
                 </Button>
               </Left>
               <Body style={{ flex: 3 }}>
-                <Button block transparent >
+                <Button
+                  block
+                  transparent
+                  onPress={
+                    () => navigation.navigate(
+                      card.route,
+                      { refresh: () => { this.forceUpdate(); } },
+                    )
+                  }
+                >
                   <Text style={{ fontSize: 20 }}>{card && I18n.t(card.text)}</Text>
                 </Button>
               </Body>

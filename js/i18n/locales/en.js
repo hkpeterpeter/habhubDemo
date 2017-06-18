@@ -11,15 +11,18 @@ const en = {
   password: 'Password',
   login: 'Login',
   register: 'Register',
-  changeLocale: 'Change Language',
+  changeLocale: 'Language',
   selectLanguage: 'Select Language',
   cancel: 'Cancel',
 
   // Component: Home
   titleHome: 'Home',
 
+  // Component: Progress
+  titleProgress: 'Progress',
+
   // Component: Achievements
-  titleAchivements: 'Achievements',
+  titleAchievements: 'Achievements',
 
   // Component: ExerciseList
   titleExerciseList: 'Exercise List',
@@ -32,7 +35,7 @@ const en = {
   titlePatientManagement: 'Patient Management',
 
   // Component: FamilyEncouragement
-  titleFamilyEncouragement: 'Encouragement',
+  titleFamilyEncouragement: 'Family Encouragement',
 
 };
 
