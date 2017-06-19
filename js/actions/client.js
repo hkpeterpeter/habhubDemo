@@ -6,3 +6,10 @@ export function setUserID(id) {
     id,
   };
 }
+
+export function setExerciseID(id) {
+  return {
+    type: ActionTypes.SET_EXERCISE_ID,
+    id,
+  };
+}

@@ -21,6 +21,8 @@ import moment from 'moment';
 import styles from './styles';
 import I18n from '../../i18n/I18n';
 
+import { setExerciseID } from '../../actions/client';
+
 
 class ExerciseList extends Component { // eslint-disable-line
 
@@ -30,6 +32,7 @@ class ExerciseList extends Component { // eslint-disable-line
     users: PropTypes.arrayOf(PropTypes.object).isRequired,
     exercises: PropTypes.arrayOf(PropTypes.object).isRequired,
     exerciseTemplates: PropTypes.arrayOf(PropTypes.object).isRequired,
+    setExerciseID: PropTypes.func.isRequired,
   }
 
   constructor(props) {
@@ -71,6 +74,7 @@ class ExerciseList extends Component { // eslint-disable-line
       const user = r[0];
       const exerciseIDs = user.exerciseIDs;
       const currentTime = this.state.currentTime;
+      //const currentTime = moment();
 
       if (exerciseIDs) {
         exerciseArray = exerciseIDs.map((id) => {
@@ -169,9 +173,12 @@ class ExerciseList extends Component { // eslint-disable-line
                 icon
                 button
                 style={{ flexDirection: 'row' }}
-                onPress={() => {
-
-                }}
+                onPress={
+                  () => {
+                    this.props.setExerciseID(item.id);
+                    navigation.navigate('Exercise', { refresh: () => { this.forceUpdate(); } });
+                  }
+                }
               >
                 <Left style={{ flex: 1 }}>
                   {item.completed ? <Icon name="checkmark-circle" /> : <Icon name="clock" />}
@@ -197,7 +204,8 @@ class ExerciseList extends Component { // eslint-disable-line
 
 function bindActions(dispatch) {
   return {
-    // func: () => dispatch(func()),
+    // func: p => dispatch(func(p)),
+    setExerciseID: id => dispatch(setExerciseID(id)),
   };
 }
 

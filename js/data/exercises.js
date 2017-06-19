@@ -32,11 +32,12 @@ const exercises = [
   makeExercise(1, 0, 20, 'Repeat for 20 times', m2s(moment().add(1, 'minutes')), false),
   makeExercise(2, 1, 10, 'Repeat for 10 times', m2s(moment().add(3, 'hours')), false),
   {
-    ...makeExercise(3, 0, 20, 'Repeat for 20 times', m2s(moment().subtract(1, 'days')), true),
+    ...makeExercise(3, 0, 20, 'Repeat for 20 times', m2s(moment().subtract(1, 'day')), true),
     completedCount: 20,
     feeling: 1,
   },
   makeExercise(4, 2, 50, 'Walk 50 steps', m2s(moment().add(1, 'days')), false),
+  makeExercise(5, 0, 10, 'Repeat for 10 times', m2s(moment().subtract(2, 'days')), false),
 ];
 
 export default exercises;

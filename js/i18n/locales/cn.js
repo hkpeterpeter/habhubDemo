@@ -33,6 +33,9 @@ const cn = {
   exerciseWalk: '行走训练',
   TodayButtonText: '今天',
 
+  // Component: Exercise
+  titleExercise: '练习',
+
   // Component: Settings
   titleSettings: '设定',
   logout: '登出',

@@ -16,6 +16,7 @@ import Achievements from './components/Achievements';
 import Progress from './components/Progress';
 import PatientManagement from './components/PatientManagement';
 import FamilyEncouragement from './components/FamilyEncouragement';
+import Exercise from './components/Exercise';
 
 const habhubRoutes = {
   Login: {
@@ -49,6 +50,10 @@ const habhubRoutes = {
   FamilyEncouragement: {
     name: 'FamilyEncouragement',
     screen: FamilyEncouragement,
+  },
+  Exercise: {
+    name: 'Exercise',
+    screen: Exercise,
   },
 };
 

@@ -17,7 +17,7 @@ const makeUser = (
 const users = [
   {
     ...makeUser('peter', 'Peter', 'Chung', 'Patient'),
-    exerciseIDs: [0, 1, 2, 3],
+    exerciseIDs: [0, 1, 2, 3, 4, 5],
   },
   makeUser('tiffany', 'Tiffany', 'Lee', 'Therapist'),
   makeUser('fiona', 'Fiona', 'Chung', 'Family'),

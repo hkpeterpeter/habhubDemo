@@ -19,7 +19,10 @@ import { NavigationActions } from 'react-navigation';
 import styles from './styles';
 import I18n from '../../i18n/I18n';
 
-import { setUserID } from '../../actions/client';
+import {
+  setUserID,
+  setExerciseID,
+} from '../../actions/client';
 
 // Reference: https://reactnavigation.org/docs/navigators/navigation-actions
 const resetAction = NavigationActions.reset({
@@ -41,6 +44,7 @@ class Settings extends Component { // eslint-disable-line
 
   static propTypes = {
     setUserID: PropTypes.func.isRequired,
+    setExerciseID: PropTypes.func.isRequired,
     navigation: PropTypes.object.isRequired,
   }
 
@@ -124,7 +128,11 @@ class Settings extends Component { // eslint-disable-line
             danger
             block
             style={styles.mb}
-            onPress={() => { this.props.setUserID(''); navigation.dispatch(resetAction); }}
+            onPress={() => {
+              this.props.setUserID('');
+              this.props.setExerciseID(-1);
+              navigation.dispatch(resetAction);
+            }}
           >
             <Icon name="power" />
             <Text>{I18n.t('logout')}</Text>
@@ -141,6 +149,7 @@ function bindActions(dispatch) {
     // func: () => dispatch(func()),
 
     setUserID: id => dispatch(setUserID(id)),
+    setExerciseID: id => dispatch(setExerciseID(id)),
   };
 }
 

@@ -46,6 +46,8 @@ Dependencies
 - [`redux-thunk`](https://github.com/gaearon/redux-thunk) Thunk middleware for Redux
 - [`lodash`](https://lodash.com/) A modern JavaScript utility library delivering modularity, performance & extras
 - [`moment`](https://momentjs.com/) Parse, validate, manipulate, and display dates and times in JavaScript
+- [`react-native-video`](https://github.com/react-native-community/react-native-video) A Video component for react-native
+- [`react-native-slider`](https://github.com/jeanregisser/react-native-slider) A pure JavaScript Slider component for react-native
 
 ## Programming guidelines
 - [Airbnb JavaScript style guideline](https://github.com/airbnb/javascript)

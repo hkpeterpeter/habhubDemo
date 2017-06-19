@@ -2977,6 +2977,10 @@ jsx-ast-utils@^1.4.0, jsx-ast-utils@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-1.4.1.tgz#3867213e8dd79bf1e8f2300c0cfc1efb182c0df1"
 
+keymirror@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/keymirror/-/keymirror-0.1.1.tgz#918889ea13f8d0a42e7c557250eee713adc95c35"
+
 kind-of@^3.0.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -3861,6 +3865,12 @@ react-native-keyboard-aware-scroll-view@0.2.9:
   dependencies:
     react-timer-mixin "^0.13.3"
 
+react-native-slider@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/react-native-slider/-/react-native-slider-0.10.0.tgz#43de21a0442a8f8163f431886f52bcf4ada04fd9"
+  dependencies:
+    prop-types "^15.5.6"
+
 react-native-tab-view@^0.0.65:
   version "0.0.65"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.65.tgz#b685ea3081ff7c96486cd997361026c407302c59"
@@ -3874,6 +3884,12 @@ react-native-vector-icons@~4.1.1:
     lodash "^4.0.0"
     prop-types "^15.5.8"
     yargs "^6.3.0"
+
+react-native-video@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-video/-/react-native-video-1.0.0.tgz#ba92b9e1a114c2c1f3a6144b0639ca3f69a0cc74"
+  dependencies:
+    keymirror "0.1.1"
 
 react-native@0.45.1:
   version "0.45.1"

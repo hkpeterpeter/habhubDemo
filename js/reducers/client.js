@@ -2,6 +2,7 @@ import ActionTypes from '../actions/ActionTypes';
 
 const initialState = {
   userID: '',
+  exerciseID: -1,
 };
 
 export default function client(state = initialState, action) {
@@ -10,6 +11,11 @@ export default function client(state = initialState, action) {
       return {
         ...state,
         userID: action.id,
+      };
+    case ActionTypes.SET_EXERCISE_ID:
+      return {
+        ...state,
+        exerciseID: action.id,
       };
     default:
       return state;

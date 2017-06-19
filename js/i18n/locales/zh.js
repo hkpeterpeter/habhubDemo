@@ -33,6 +33,9 @@ const zh = {
   exerciseWalk: '行走訓練',
   TodayButtonText: '今天',
 
+  // Component: Exercise
+  titleExercise: '練習',
+
   // Component: Settings
   titleSettings: '設定',
   logout: '登出',

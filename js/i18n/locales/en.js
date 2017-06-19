@@ -33,6 +33,9 @@ const en = {
   exerciseWalk: 'Walk Exercise',
   TodayButtonText: 'Today',
 
+  // Component: Exercise
+  titleExercise: 'Exercise',
+
   // Component: Settings
   titleSettings: 'Settings',
   logout: 'Logout',
