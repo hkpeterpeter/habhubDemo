@@ -12,6 +12,7 @@ export default function exercises(state = initialState, action) {
         ? { ...item,
           completed: true,
           completedCount: action.completedCount,
+          completedDateTime: action.completedDateTime,
           feeling: action.feeling }
         : item,
       );

@@ -89,7 +89,11 @@ class ExerciseList extends Component { // eslint-disable-line
           // exercise on the same date of the currentMoment
           if (this.state.currentMoment.isSame(exerciseMoment, 'day')) {
             const timeDiff = exerciseMoment.diff(currentTime);
-            const description = `${moment.duration(timeDiff).humanize('minutes')}`;
+
+
+            const description = exercise.completed
+              ? `completed on ${moment(exercise.completedDateTime).format('LLLL')}`
+              : `${moment.duration(timeDiff).humanize('minutes')}`;
             return {
               id,
               name: exerciseTemplate.name,

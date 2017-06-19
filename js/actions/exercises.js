@@ -7,11 +7,12 @@ export function addExercise(exercise) {
   };
 }
 
-export function updateExerciseProgress(id, completedCount, feeling) {
+export function updateExerciseProgress(id, completedCount, completedDateTime, feeling) {
   return {
     type: ActionTypes.UPDATE_EXERCISE_PROGRESS,
     id,
     completedCount,
+    completedDateTime,
     feeling,
   };
 }

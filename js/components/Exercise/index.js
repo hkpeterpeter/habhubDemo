@@ -18,6 +18,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Slider from 'react-native-slider';
 import Video from 'react-native-video';
+import moment from 'moment';
 
 import { getVideo, therapistImage } from '../../asset';
 import styles from './styles';
@@ -62,8 +63,8 @@ class Exercise extends Component { // eslint-disable-line
     this.setState({ paused: !this.state.paused });
   }
 
-  handleSaveButton(id, completedCount, feeling) {
-    this.props.updateExerciseProgress(id, completedCount, feeling);
+  handleSaveButton(id, completedCount, completedDateTime, feeling) {
+    this.props.updateExerciseProgress(id, completedCount, completedDateTime, feeling);
     this.props.setExerciseID(-1);
 
     const navigation = this.props.navigation;
@@ -216,6 +217,7 @@ class Exercise extends Component { // eslint-disable-line
                 this.handleSaveButton(
                   exerciseID,
                   parseInt(this.state.value * (exercise.count), 10),
+                  moment().toISOString(),
                   this.state.feeling,
                 )}
             >
@@ -245,8 +247,8 @@ function bindActions(dispatch) {
   return {
     // func: () => dispatch(func()),
     setExerciseID: id => dispatch(setExerciseID(id)),
-    updateExerciseProgress: (id, completedCount, feeling) =>
-                  dispatch(updateExerciseProgress(id, completedCount, feeling)),
+    updateExerciseProgress: (id, completedCount, completedDateTime, feeling) =>
+                  dispatch(updateExerciseProgress(id, completedCount, completedDateTime, feeling)),
   };
 }
 
