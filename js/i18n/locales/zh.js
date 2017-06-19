@@ -28,6 +28,10 @@ const zh = {
 
   // Component: ExerciseList
   titleExerciseList: '活動列表',
+  exerciseUpperLimb: '上肢練習',
+  exerciseLowerLimb: '下肢練習',
+  exerciseWalk: '行走訓練',
+  TodayButtonText: '今天',
 
   // Component: Settings
   titleSettings: '設定',

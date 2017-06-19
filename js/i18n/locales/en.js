@@ -28,6 +28,10 @@ const en = {
 
   // Component: ExerciseList
   titleExerciseList: 'Exercise List',
+  exerciseUpperLimb: 'Upper Limb Exercise',
+  exerciseLowerLimb: 'Lower Limb Exercise',
+  exerciseWalk: 'Walk Exercise',
+  TodayButtonText: 'Today',
 
   // Component: Settings
   titleSettings: 'Settings',

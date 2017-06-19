@@ -1,3 +1,8 @@
+// ExerciseTemplate:
+//  id (key): number
+//  name: string (the name of the exercise in i18n)
+//  video: string (the name of the video file)
+
 const makeExerciseTemplate = (
   id,
   name,

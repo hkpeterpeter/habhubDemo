@@ -28,6 +28,10 @@ const cn = {
 
   // Component: ExerciseList
   titleExerciseList: '活动列表',
+  exerciseUpperLimb: '上肢练习',
+  exerciseLowerLimb: '下肢练习',
+  exerciseWalk: '行走训练',
+  TodayButtonText: '今天',
 
   // Component: Settings
   titleSettings: '设定',
