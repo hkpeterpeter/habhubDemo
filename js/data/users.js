@@ -6,6 +6,9 @@
 //
 // Patient: extends User
 //  exerciseIDs: Array of foreignKeys
+//
+// Therapist: extends User
+//  patientIDs: Array of patientIDs
 
 const makeUser = (
   id,
@@ -19,7 +22,10 @@ const users = [
     ...makeUser('peter', 'Peter', 'Chung', 'Patient'),
     exerciseIDs: [0, 1, 2, 3, 4, 5],
   },
-  makeUser('tiffany', 'Tiffany', 'Lee', 'Therapist'),
+  {
+    ...makeUser('tiffany', 'Tiffany', 'Lee', 'Therapist'),
+    patientIDs: ['peter'],
+  },
   makeUser('fiona', 'Fiona', 'Chung', 'Family'),
 ];
 

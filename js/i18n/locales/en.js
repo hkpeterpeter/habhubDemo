@@ -43,6 +43,7 @@ const en = {
 
   // Component: PatientManagement
   titlePatientManagement: 'Patient Management',
+  addPatientButtonText: 'Add Patient',
 
   // Component: FamilyEncouragement
   titleFamilyEncouragement: 'Family Encouragement',

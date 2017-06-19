@@ -7,6 +7,7 @@ const ActionTypes = {
 
   SET_USER_ID: 'SET_USER_ID',
   SET_EXERCISE_ID: 'SET_EXERCISE_ID',
+  SET_PATIENT_ID: 'SET_PATIENT_ID',
 
 };
 

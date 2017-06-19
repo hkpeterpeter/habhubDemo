@@ -196,6 +196,7 @@ class Exercise extends Component { // eslint-disable-line
               onPress={() => {
                 this.setState({ paused: true });
                 // Actions.camera();
+                navigation.navigate('CameraGui', { refresh: () => { this.forceUpdate(); } });
               }}
             >
               <Icon name="ios-camera" />

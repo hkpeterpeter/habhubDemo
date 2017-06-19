@@ -43,6 +43,7 @@ const zh = {
 
   // Component: PatientManagement
   titlePatientManagement: '病人管理',
+  addPatientButtonText: '新增病人',
 
   // Component: FamilyEncouragement
   titleFamilyEncouragement: '家人鼓勵',

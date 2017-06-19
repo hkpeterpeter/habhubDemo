@@ -48,6 +48,7 @@ Dependencies
 - [`moment`](https://momentjs.com/) Parse, validate, manipulate, and display dates and times in JavaScript
 - [`react-native-video`](https://github.com/react-native-community/react-native-video) A Video component for react-native
 - [`react-native-slider`](https://github.com/jeanregisser/react-native-slider) A pure JavaScript Slider component for react-native
+- [`react-native-camera`](https://github.com/lwansbrough/react-native-camera) A Camera component for React Native. Also supports barcode scanning!
 
 ## Programming guidelines
 - [Airbnb JavaScript style guideline](https://github.com/airbnb/javascript)

@@ -13,3 +13,10 @@ export function setExerciseID(id) {
     id,
   };
 }
+
+export function setPatientID(id) {
+  return {
+    type: ActionTypes.SET_PATIENT_ID,
+    id,
+  };
+}

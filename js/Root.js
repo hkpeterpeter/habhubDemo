@@ -17,6 +17,7 @@ import Progress from './components/Progress';
 import PatientManagement from './components/PatientManagement';
 import FamilyEncouragement from './components/FamilyEncouragement';
 import Exercise from './components/Exercise';
+import CameraGui from './components/CameraGui';
 
 const habhubRoutes = {
   Login: {
@@ -54,6 +55,10 @@ const habhubRoutes = {
   Exercise: {
     name: 'Exercise',
     screen: Exercise,
+  },
+  CameraGui: {
+    name: 'CameraGui',
+    screen: CameraGui,
   },
 };
 
