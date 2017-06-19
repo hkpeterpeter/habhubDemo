@@ -164,7 +164,9 @@ class Exercise extends Component { // eslint-disable-line
 
           <ListItem style={styles.row}>
             <Button
-              success bordered style={styles.rowItem}
+              success
+              bordered
+              style={styles.rowItem}
               onPress={() => { this.setState({ feeling: 0 }); }}
             >
               <Icon name="ios-happy-outline" /><Text>
@@ -172,7 +174,9 @@ class Exercise extends Component { // eslint-disable-line
             </Button>
 
             <Button
-              warning bordered style={styles.rowItem}
+              warning
+              bordered
+              style={styles.rowItem}
               onPress={() => { this.setState({ feeling: 1 }); }}
             >
               <Icon name="ios-stopwatch-outline" /><Text>
@@ -180,7 +184,9 @@ class Exercise extends Component { // eslint-disable-line
             </Button>
 
             <Button
-              danger bordered style={styles.rowItem}
+              danger
+              bordered
+              style={styles.rowItem}
               onPress={() => { this.setState({ feeling: 2 }); }}
             >
               <Icon name="ios-sad-outline" /><Text>
@@ -223,7 +229,7 @@ class Exercise extends Component { // eslint-disable-line
                 )}
             >
               <Icon name="checkmark-circle" />
-              <Text>{('Save')}</Text>
+              <Text>{I18n.t('Save')}</Text>
             </Button>
             <Button
               danger
@@ -232,7 +238,7 @@ class Exercise extends Component { // eslint-disable-line
               onPress={this.handleCancelButton}
             >
               <Icon name="close-circle" />
-              <Text>{('Cancel')}</Text>
+              <Text>{I18n.t('Cancel')}</Text>
             </Button>
           </ListItem>
 

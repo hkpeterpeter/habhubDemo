@@ -7,6 +7,14 @@ export function addExercise(exercise) {
   };
 }
 
+export function updateExercise(id, exercise) {
+  return {
+    type: ActionTypes.UPDATE_EXERCISE,
+    id,
+    exercise,
+  };
+}
+
 export function updateExerciseProgress(id, completedCount, completedDateTime, feeling) {
   return {
     type: ActionTypes.UPDATE_EXERCISE_PROGRESS,

@@ -6,3 +6,11 @@ export function addUser(user) {
     user,
   };
 }
+
+export function addPatientExercise(patientID, exerciseID) {
+  return {
+    type: ActionTypes.ADD_PATIENT_EXERCISE,
+    patientID,
+    exerciseID,
+  };
+}

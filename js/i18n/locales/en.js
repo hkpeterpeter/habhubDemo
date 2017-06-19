@@ -5,6 +5,8 @@ const en = {
   Therapist: 'Therapist',
   Family: 'Family',
   Demo: 'Demo',
+  Save: 'Save',
+  Cancel: 'Cancel',
 
   // Component: Login
   username: 'Username',
@@ -54,6 +56,7 @@ const en = {
 
   // Component: PatientExerciseEditor
   titlePatientExerciseEditor: 'Exercise Editor',
+  ExerciseVideoList: 'Exercise Video List',
 
 };
 

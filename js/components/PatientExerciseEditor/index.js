@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Slider } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import {
   Container,
   Header,
@@ -16,6 +16,7 @@ import {
   CardItem,
   InputGroup,
   Input,
+  ListItem,
 } from 'native-base';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -27,6 +28,8 @@ import styles from './styles';
 import I18n from '../../i18n/I18n';
 
 import { setExerciseID } from '../../actions/client';
+import { addExercise, updateExercise } from '../../actions/exercises';
+import { addPatientExercise } from '../../actions/users';
 import { getVideo } from '../../asset';
 
 class PatientExerciseEditor extends Component { // eslint-disable-line
@@ -37,6 +40,9 @@ class PatientExerciseEditor extends Component { // eslint-disable-line
     exercises: PropTypes.arrayOf(PropTypes.object).isRequired,
     exerciseTemplates: PropTypes.arrayOf(PropTypes.object).isRequired,
     setExerciseID: PropTypes.func.isRequired,
+    addExercise: PropTypes.func.isRequired,
+    updateExercise: PropTypes.func.isRequired,
+    addPatientExercise: PropTypes.func.isRequired,
   }
 
   constructor(props) {
@@ -60,6 +66,8 @@ class PatientExerciseEditor extends Component { // eslint-disable-line
     this.onValueChange = this.onValueChange.bind(this);
     this.playOrPauseVideo = this.playOrPauseVideo.bind(this);
     this.shiftCount = this.shiftCount.bind(this);
+    this.handleSaveButton = this.handleSaveButton.bind(this);
+    this.handleCancelButton = this.handleCancelButton.bind(this);
   }
 
   onValueChange(value: string) {
@@ -79,6 +87,40 @@ class PatientExerciseEditor extends Component { // eslint-disable-line
     this.setState({ count: newCount, instruction: `Repeat for ${newCount} times` });
   }
 
+  handleSaveButton() {
+    const patientID = this.props.client.patientID;
+    const exerciseID = this.props.client.exerciseID;
+    const exercise = {
+      // TODO: assume no exercise will be deleted...
+      id: exerciseID >= 0 ? exerciseID : this.props.exercises.length,
+      exerciseTemplateID: this.state.selectedVideoTemplate,
+      count: this.state.count,
+      instruction: this.state.instruction,
+      startDateTime: moment(this.state.startDateTime).toISOString(),
+      completed: false,
+    };
+    if (exerciseID >= 0) {
+      this.props.updateExercise(exerciseID, exercise);
+    } else {
+      this.props.addExercise(exercise);
+      this.props.addPatientExercise(patientID, exercise.id);
+    }
+
+    this.props.setExerciseID(-1);
+
+    const navigation = this.props.navigation;
+    navigation.state.params.refresh();
+    navigation.goBack();
+  }
+
+  handleCancelButton() {
+    this.props.setExerciseID(-1);
+
+    const navigation = this.props.navigation;
+    navigation.state.params.refresh();
+    navigation.goBack();
+  }
+
 
   render() {
     const navigation = this.props.navigation;
@@ -86,22 +128,8 @@ class PatientExerciseEditor extends Component { // eslint-disable-line
     const patientID = this.props.client.patientID;
     if (patientID === '') { return <Container />; }
 
-    // const exerciseID = this.props.client.exerciseID;
-    // const exercises = this.props.exercises;
+
     const exerciseTemplates = this.props.exerciseTemplates;
-    // let exercise = null;
-    // if (exerciseID === -1) {
-    //   exercise = {
-    //     id: exercises.length, // temporary assume exercise won't be deleted..
-    //     exerciseTemplateID: 0,
-    //     count: 1,
-    //     instruction: 'Repeat 1 times',
-    //     startDateTime: moment().toISOString(),
-    //     completed: false,
-    //   };
-    // } else {
-    //   exercise = exercises.filter(x => x.id === exerciseID)[0];
-    // }
     const exerciseTemplate = exerciseTemplates
       .filter(x => x.id === this.state.selectedVideoTemplate)[0];
     return (
@@ -204,6 +232,28 @@ class PatientExerciseEditor extends Component { // eslint-disable-line
             onDateChange={(startDateTime) => { this.setState({ startDateTime }); }}
           />
 
+          <Text style={styles.mb} />
+
+          <ListItem style={styles.row}>
+            <Button
+              success
+              bordered
+              style={styles.rowItem}
+              onPress={this.handleSaveButton}
+            >
+              <Icon name="checkmark-circle" />
+              <Text>{I18n.t('Save')}</Text>
+            </Button>
+            <Button
+              danger
+              bordered
+              style={styles.rowItem}
+              onPress={this.handleCancelButton}
+            >
+              <Icon name="close-circle" />
+              <Text>{I18n.t('Cancel')}</Text>
+            </Button>
+          </ListItem>
 
         </Content>
 
@@ -216,6 +266,10 @@ function bindActions(dispatch) {
   return {
     // func: () => dispatch(func()),
     setExerciseID: id => dispatch(setExerciseID(id)),
+    addExercise: exercise => dispatch(addExercise(exercise)),
+    updateExercise: (id, exercise) => dispatch(updateExercise(id, exercise)),
+    addPatientExercise: (patientID, exerciseID) =>
+     dispatch(addPatientExercise(patientID, exerciseID)),
   };
 }
 

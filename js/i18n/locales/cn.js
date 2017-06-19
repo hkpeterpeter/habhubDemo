@@ -5,6 +5,8 @@ const cn = {
   Therapist: '治疗师',
   Family: '家人',
   Demo: '测试',
+  Save: '储存',
+  Cancel: '取消',
 
   // Component: Login
   username: '用户名称',
@@ -55,6 +57,7 @@ const cn = {
 
   // Component: PatientExerciseEditor
   titlePatientExerciseEditor: '活动编辑器',
+  ExerciseVideoList: '活动短片',
 
 };
 

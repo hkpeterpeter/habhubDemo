@@ -5,6 +5,8 @@ const zh = {
   Therapist: '治療師',
   Family: '家人',
   Demo: '測試',
+  Save: '儲存',
+  Cancel: '取消',
 
   // Component: Login
   username: '用戶名稱',
@@ -54,6 +56,7 @@ const zh = {
 
   // Component: PatientExerciseEditor
   titlePatientExerciseEditor: '活動編輯器',
+  ExerciseVideoList: '活動短片',
 
 };
 
