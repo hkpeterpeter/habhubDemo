@@ -61,8 +61,7 @@ Dependencies
 
 
 ## Tools
-- [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension) and its [usage](http://extension.remotedev.io/#usage)
-- [draw.io](https://www.draw.io/) Online tool for diagrams
+- [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension) and its [usage](http://extension.remotedev.io/#usage) Install the chrome extension to debug Redux
 
 
 ## App deployment
