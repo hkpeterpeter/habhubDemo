@@ -15,38 +15,42 @@ import {
 } from 'native-base';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import moment from 'moment';
 
 import styles from './styles';
 import I18n from '../../i18n/I18n';
 
-import { setPatientID } from '../../actions/client';
+import { setExerciseID } from '../../actions/client';
 
-class PatientManagement extends Component { // eslint-disable-line
+class TherapistPatientExerciseList extends Component { // eslint-disable-line
 
   static propTypes = {
     navigation: PropTypes.object.isRequired,
     client: PropTypes.object.isRequired,
     users: PropTypes.arrayOf(PropTypes.object).isRequired,
-    setPatientID: PropTypes.func.isRequired,
+    exercises: PropTypes.arrayOf(PropTypes.object).isRequired,
+    exerciseTemplates: PropTypes.arrayOf(PropTypes.object).isRequired,
+    setExerciseID: PropTypes.func.isRequired,
   }
 
   render() {
     const navigation = this.props.navigation;
     const userID = this.props.client.userID;
     if (userID === '') { return <Container />; }
+    const patientID = this.props.client.patientID;
+    if (patientID === '') { return <Container />; }
 
-    const user = this.props.users.filter(x => x.id === userID)[0];
-    const patientIDs = user.patientIDs;
-
-    const patientArray = patientIDs.map((id) => {
-      const patient = this.props.users.filter(x => x.id === id)[0];
-      const displayName = `${patient.firstName} ${patient.lastName}`;
+    const patient = this.props.users.filter(x => x.id === patientID)[0];
+    const exerciseArray = patient.exerciseIDs.map((id) => {
+      const exercise = this.props.exercises.filter(x => x.id === id)[0];
+      const exerciseTemplate =
+        this.props.exerciseTemplates.filter(x => x.id === exercise.exerciseTemplateID)[0];
       return {
         id,
-        displayName,
+        displayName: I18n.t(exerciseTemplate.name),
+        displayNote: moment(exercise.startDateTime).format('LL'),
       };
     });
-
 
     return (
       <Container style={styles.container}>
@@ -62,7 +66,7 @@ class PatientManagement extends Component { // eslint-disable-line
             </Button>
           </Left>
           <Body style={{ flex: 4 }}>
-            <Title>{I18n.t('titlePatientManagement')}</Title>
+            <Title>{I18n.t('titleTherapistPatientExerciseList')}</Title>
           </Body>
           <Right style={{ flex: 1 }}>
             <Button
@@ -77,19 +81,19 @@ class PatientManagement extends Component { // eslint-disable-line
 
         <Content padder>
 
-          {patientArray.map(item =>
+          {exerciseArray.map(item =>
             (<Card key={item.id}>
               <CardItem
                 icon
                 button
                 onPress={() => {
-                  this.props.setPatientID(item.id);
-                  navigation.navigate('TherapistPatientExerciseList',
-                  { refresh: () => { this.forceUpdate(); } });
+                  this.props.setExerciseID(item.id); // edit an existing exercise
+                  navigation.navigate('PatientExerciseEditor', { refresh: () => { this.forceUpdate(); } });
                 }}
               >
                 <Body style={{ flex: 3 }}>
                   <Text>{item.displayName}</Text>
+                  <Text note>{item.displayNote}</Text>
                 </Body>
                 <Right>
                   <Icon name="arrow-forward" />
@@ -97,10 +101,17 @@ class PatientManagement extends Component { // eslint-disable-line
               </CardItem>
             </Card>),
 
-           )}
+            )}
 
-          <Button block primary >
-            <Text>{I18n.t('addPatientButtonText')}</Text>
+          <Button
+            block
+            primary
+            onPress={() => {
+              this.props.setExerciseID(-1); // Create a new exercise
+              navigation.navigate('PatientExerciseEditor', { refresh: () => { this.forceUpdate(); } });
+            }}
+          >
+            <Text>{I18n.t('addExerciseButtonText')}</Text>
           </Button>
 
         </Content>
@@ -113,7 +124,7 @@ class PatientManagement extends Component { // eslint-disable-line
 function bindActions(dispatch) {
   return {
     // func: () => dispatch(func()),
-    setPatientID: id => dispatch(setPatientID(id)),
+    setExerciseID: id => dispatch(setExerciseID(id)),
   };
 }
 
@@ -121,7 +132,9 @@ const mapStateToProps = state => ({
   // client: state.client,
   client: state.client,
   users: state.users,
+  exercises: state.exercises,
+  exerciseTemplates: state.exerciseTemplates,
 
 });
 
-export default connect(mapStateToProps, bindActions)(PatientManagement);
+export default connect(mapStateToProps, bindActions)(TherapistPatientExerciseList);

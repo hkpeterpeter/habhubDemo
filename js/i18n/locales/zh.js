@@ -45,8 +45,15 @@ const zh = {
   titlePatientManagement: '病人管理',
   addPatientButtonText: '新增病人',
 
+  // Component: TherapistPatientExerciseList
+  titleTherapistPatientExerciseList: '活動列表',
+  addExerciseButtonText: '新增活動',
+
   // Component: FamilyEncouragement
   titleFamilyEncouragement: '家人鼓勵',
+
+  // Component: PatientExerciseEditor
+  titlePatientExerciseEditor: '活動編輯器',
 
 };
 

@@ -45,8 +45,15 @@ const en = {
   titlePatientManagement: 'Patient Management',
   addPatientButtonText: 'Add Patient',
 
+  // Component: TherapistPatientExerciseList
+  titleTherapistPatientExerciseList: 'Exercise List',
+  addExerciseButtonText: 'Add Exercise',
+
   // Component: FamilyEncouragement
   titleFamilyEncouragement: 'Family Encouragement',
+
+  // Component: PatientExerciseEditor
+  titlePatientExerciseEditor: 'Exercise Editor',
 
 };
 

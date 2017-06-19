@@ -62,6 +62,8 @@ class Home extends Component { // eslint-disable-line
     this.state = {
       cardIndex: 0,
     };
+
+    this.shiftCardIndex = this.shiftCardIndex.bind(this);
   }
 
   shiftCardIndex(shift, min = 0, max = 1) {

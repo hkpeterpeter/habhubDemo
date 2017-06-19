@@ -24,9 +24,13 @@ const users = [
   },
   {
     ...makeUser('tiffany', 'Tiffany', 'Lee', 'Therapist'),
-    patientIDs: ['peter'],
+    patientIDs: ['peter', 'john'],
   },
   makeUser('fiona', 'Fiona', 'Chung', 'Family'),
+  {
+    ...makeUser('john', 'John', 'Tsang', 'Patient'),
+    exerciseIDs: [],
+  },
 ];
 
 export default users;

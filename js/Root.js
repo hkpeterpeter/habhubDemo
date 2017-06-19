@@ -18,6 +18,8 @@ import PatientManagement from './components/PatientManagement';
 import FamilyEncouragement from './components/FamilyEncouragement';
 import Exercise from './components/Exercise';
 import CameraGui from './components/CameraGui';
+import TherapistPatientExerciseList from './components/TherapistPatientExerciseList';
+import PatientExerciseEditor from './components/PatientExerciseEditor';
 
 const habhubRoutes = {
   Login: {
@@ -59,6 +61,14 @@ const habhubRoutes = {
   CameraGui: {
     name: 'CameraGui',
     screen: CameraGui,
+  },
+  TherapistPatientExerciseList: {
+    name: 'TherapistPatientExerciseList',
+    screen: TherapistPatientExerciseList,
+  },
+  PatientExerciseEditor: {
+    name: 'PatientExerciseEditor',
+    screen: PatientExerciseEditor,
   },
 };
 

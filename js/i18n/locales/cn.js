@@ -46,8 +46,15 @@ const cn = {
   titlePatientManagement: '病人管理',
   addPatientButtonText: '新增病人',
 
+  // Component: TherapistPatientExerciseList
+  titleTherapistPatientExerciseList: '活动列表',
+  addExerciseButtonText: '新增活动',
+
   // Component: FamilyEncouragement
   titleFamilyEncouragement: '家人鼓励',
+
+  // Component: PatientExerciseEditor
+  titlePatientExerciseEditor: '活动编辑器',
 
 };
 
