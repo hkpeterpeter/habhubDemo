@@ -42,6 +42,8 @@ class ExerciseList extends Component { // eslint-disable-line
       currentMoment: moment(), // The current date (controlled by buttons)
       currentTime: moment(), // The actual current time
     };
+
+    this.shiftDay = this.shiftDay.bind(this);
   }
 
   componentDidMount() {

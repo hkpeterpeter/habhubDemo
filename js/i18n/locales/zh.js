@@ -35,6 +35,7 @@ const zh = {
 
   // Component: Exercise
   titleExercise: '練習',
+  exerciseRecord: '練習紀錄',
 
   // Component: Settings
   titleSettings: '設定',

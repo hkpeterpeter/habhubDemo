@@ -35,6 +35,7 @@ const en = {
 
   // Component: Exercise
   titleExercise: 'Exercise',
+  exerciseRecord: 'Exercise\'s record',
 
   // Component: Settings
   titleSettings: 'Settings',

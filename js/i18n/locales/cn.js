@@ -35,6 +35,8 @@ const cn = {
 
   // Component: Exercise
   titleExercise: '练习',
+  exerciseRecord: '练习纪录',
+
 
   // Component: Settings
   titleSettings: '设定',
