@@ -8,11 +8,11 @@ const familyImage = require('../../img/family.png');
 const exerciseImage = require('../../img/patient-feature-exercise.png');
 const achievementsImage = require('../../img/patient-feature-achievements.png');
 const progressImage = require('../../img/patient-feature-progress.png');
-
 const patientManagementImage = require('../../img/therapist-feature-patient-management.png');
 const encouragementImage = require('../../img/family-feature-encouragement.png');
 
-
+const achievementHardworkingImage = require('../../img/achievement-hardworking.png');
+const achievementSupportedByFamilyImage = require('../../img/achievement-supported-by-family.png');
 
 const exerciseLowerLimbVideo = require('../../video/exercise-lower-limb.mp4');
 const exerciseUpperLimbVideo = require('../../video/exercise-upper-limb.mp4');
@@ -39,4 +39,6 @@ export {
   patientManagementImage,
   encouragementImage,
   progressImage,
+  achievementHardworkingImage,
+  achievementSupportedByFamilyImage,
 };

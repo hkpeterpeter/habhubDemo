@@ -23,6 +23,8 @@ const en = {
 
   // Component: Achievements
   titleAchievements: 'Achievements',
+  HardworkingPatient: 'Hardworking patient',
+  SupportedByFamily: 'Supported by 5 family members',
 
   // Component: ExerciseList
   titleExerciseList: 'Exercise List',

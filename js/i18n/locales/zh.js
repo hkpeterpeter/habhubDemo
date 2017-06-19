@@ -23,6 +23,8 @@ const zh = {
 
   // Component: Achievements
   titleAchievements: '成就',
+  HardworkingPatient: '勤力的病人',
+  SupportedByFamily: '得到5位家人的支持',
 
   // Component: ExerciseList
   titleExerciseList: '活動列表',

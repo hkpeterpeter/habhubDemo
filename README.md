@@ -44,6 +44,8 @@ Dependencies
 - [`native-base`](https://github.com/GeekyAnts/NativeBase) Essential cross-platform UI components for React Native
 - [`react-redux`](https://github.com/reactjs/react-redux) Official React bindings for Redux
 - [`redux-thunk`](https://github.com/gaearon/redux-thunk) Thunk middleware for Redux
+- [`lodash`](https://lodash.com/) A modern JavaScript utility library delivering modularity, performance & extras
+- [`moment`](https://momentjs.com/) Parse, validate, manipulate, and display dates and times in JavaScript
 
 ## Programming guidelines
 - [Airbnb JavaScript style guideline](https://github.com/airbnb/javascript)
