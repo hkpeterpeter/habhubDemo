@@ -76,7 +76,6 @@ class ExerciseList extends Component { // eslint-disable-line
       const user = r[0];
       const exerciseIDs = user.exerciseIDs;
       const currentTime = this.state.currentTime;
-      //const currentTime = moment();
 
       if (exerciseIDs) {
         exerciseArray = exerciseIDs.map((id) => {
