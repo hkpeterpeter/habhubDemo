@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Image } from 'react-native';
 import {
   Container,
   Header,
@@ -127,6 +128,14 @@ class Progress extends Component { // eslint-disable-line
                   </Button>
                 </Right>
               </CardItem>
+
+              {item.images.length > 0 && <Image
+                // source={require(item.images[0])}
+                source={{ uri: item.images[0], isStatic: true }}
+                style={styles.cardImage}
+                resizeMode="contain"
+              />}
+
             </Card>),
           )}
         </Content>
