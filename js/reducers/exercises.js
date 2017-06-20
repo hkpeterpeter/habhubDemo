@@ -7,7 +7,7 @@ export default function exercises(state = initialState, action) {
     case ActionTypes.ADD_EXERCISE:
       return [...state, action.exercise];
     case ActionTypes.UPDATE_EXERCISE:
-      return state.map(item => 
+      return state.map(item =>
       (item.id === action.id)
       ? { ...item,
         ...action.exercise }
@@ -23,6 +23,14 @@ export default function exercises(state = initialState, action) {
           feeling: action.feeling }
         : item,
       );
+    case ActionTypes.ADD_EXERCISE_IMAGE:
+      return state.map(item =>
+          (item.id === action.id && item.images)
+          ? { ...item,
+            images: item.images.concat(action.imageURL),
+          }
+          : item,
+        );
     default:
       return state;
   }

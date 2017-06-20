@@ -20,3 +20,10 @@ export function setPatientID(id) {
     id,
   };
 }
+
+export function setDebug(obj) {
+  return {
+    type: ActionTypes.SET_DEBUG,
+    obj,
+  };
+}

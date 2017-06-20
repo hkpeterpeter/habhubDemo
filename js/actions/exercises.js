@@ -24,3 +24,11 @@ export function updateExerciseProgress(id, completedCount, completedDateTime, fe
     feeling,
   };
 }
+
+export function addExerciseImage(id, imageURL) {
+  return {
+    type: ActionTypes.ADD_EXERCISE_IMAGE,
+    id,
+    imageURL,
+  };
+}

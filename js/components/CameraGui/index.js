@@ -18,6 +18,9 @@ import {
 } from 'native-base';
 
 
+import { setDebug } from '../../actions/client';
+import { addExerciseImage } from '../../actions/exercises';
+
 import styles from './styles';
 
 const imgCameraRear = require('./assets/ic_camera_rear_white.png');
@@ -33,6 +36,9 @@ class CameraGui extends Component {
 
   static propTypes = {
     navigation: PropTypes.object.isRequired,
+    setDebug: PropTypes.func.isRequired,
+    addExerciseImage: PropTypes.func.isRequired,
+    client: PropTypes.object.isRequired,
   }
 
   constructor(props) {
@@ -43,7 +49,8 @@ class CameraGui extends Component {
     this.state = {
       camera: {
         aspect: CameraConst.Aspect.fill,
-        captureTarget: CameraConst.CaptureTarget.cameraRoll,
+        // captureTarget: CameraConst.CaptureTarget.cameraRoll,
+        captureTarget: Camera.constants.CaptureTarget.disk,
         type: CameraConst.Type.back,
         orientation: CameraConst.Orientation.auto,
         flashMode: CameraConst.FlashMode.auto,
@@ -55,16 +62,27 @@ class CameraGui extends Component {
   takePicture = () => {
     if (this.camera) {
       this.camera.capture()
-         .then(data => console.log(data))
-         .catch(err => console.error(err));
+         .then((data) => {
+           this.props.setDebug(data);
+
+           const exerciseID = this.props.client.exerciseID;
+           if (exerciseID >= 0) {
+             this.props.addExerciseImage(exerciseID, data.path);
+           }
+
+           const navigation = this.props.navigation;
+           navigation.state.params.refresh();
+           navigation.goBack();
+         })
+         .catch(err => this.props.setDebug(err));
     }
   }
 
   startRecording = () => {
     if (this.camera) {
       this.camera.capture({ mode: CameraConst.CaptureMode.video })
-           .then(data => console.log(data))
-           .catch(err => console.error(err));
+           .then(data => this.props.setDebug(data))
+           .catch(err => this.props.setDebug(err));
       this.setState({
         isRecording: true,
       });
@@ -234,11 +252,15 @@ class CameraGui extends Component {
 function bindActions(dispatch) {
   return {
     // openDrawer: () => dispatch(openDrawer()),
+
+    setDebug: obj => dispatch(setDebug(obj)),
+    addExerciseImage: (id, imageURL) => dispatch(addExerciseImage(id, imageURL)),
   };
 }
 
 const mapStateToProps = state => ({
   // locale: state.locale.locale,
+  client: state.client,
 });
 
 export default connect(mapStateToProps, bindActions)(CameraGui);

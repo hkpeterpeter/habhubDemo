@@ -3,11 +3,13 @@ import ActionTypes from '../actions/ActionTypes';
 // userID: string (used by all roles)
 // exerciseID: number (used by patient/therapist)
 // patientID: string (used by therapist)
+// debug: any JSON object
 
 const initialState = {
   userID: '',
   exerciseID: -1,
   patientID: '',
+  debug: {},
 };
 
 export default function client(state = initialState, action) {
@@ -26,6 +28,11 @@ export default function client(state = initialState, action) {
       return {
         ...state,
         patientID: action.id,
+      };
+    case ActionTypes.SET_DEBUG:
+      return {
+        ...state,
+        debug: action.obj,
       };
     default:
       return state;

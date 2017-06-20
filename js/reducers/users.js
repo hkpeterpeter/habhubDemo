@@ -8,7 +8,7 @@ export default function users(state = initialState, action) {
       return [...state, action.user];
     case ActionTypes.ADD_PATIENT_EXERCISE:
       return state.map(item =>
-      (item.id === action.patientID)
+      (item.id === action.patientID && item.exerciseIDs)
       ? { ...item,
         exerciseIDs: item.exerciseIDs.concat(action.exerciseID) }
       : item,
