@@ -40,18 +40,13 @@ const exercises = [
     ...makeExercise(0, 2, 50, 'Walk 50 steps', m2s(moment().subtract(30, 'minutes')), true),
     completedCount: 50,
     completedDateTime: m2s(moment().subtract(20, 'minutes')),
-    feeling: 2,
+    feeling: 0,
   },
   makeExercise(1, 0, 20, 'Repeat for 20 times', m2s(moment().add(1, 'minutes')), false),
-  makeExercise(2, 1, 10, 'Repeat for 10 times', m2s(moment().add(3, 'hours')), false),
-  {
-    ...makeExercise(3, 0, 20, 'Repeat for 20 times', m2s(moment().subtract(1, 'day')), true),
-    completedCount: 20,
-    completedDateTime: m2s(moment().subtract(1, 'day')),
-    feeling: 1,
-  },
-  makeExercise(4, 2, 50, 'Walk 50 steps', m2s(moment().add(1, 'days')), false),
-  makeExercise(5, 0, 10, 'Repeat for 10 times', m2s(moment().subtract(2, 'days')), false),
+  // makeExercise(2, 1, 10, 'Repeat for 10 times', m2s(moment().add(3, 'hours')), false),
+  // makeExercise(3, 0, 20, 'Repeat for 20 times', m2s(moment().subtract(1, 'day')), false),
+  // makeExercise(4, 2, 50, 'Walk 50 steps', m2s(moment().add(1, 'days')), false),
+  // makeExercise(5, 0, 10, 'Repeat for 10 times', m2s(moment().subtract(2, 'days')), false),
 ];
 
 export default exercises;

@@ -20,6 +20,7 @@ import Exercise from './components/Exercise';
 import CameraGui from './components/CameraGui';
 import TherapistPatientExerciseList from './components/TherapistPatientExerciseList';
 import PatientExerciseEditor from './components/PatientExerciseEditor';
+import ProgressImageViewer from './components/ProgressImageViewer';
 
 const habhubRoutes = {
   Login: {
@@ -69,6 +70,10 @@ const habhubRoutes = {
   PatientExerciseEditor: {
     name: 'PatientExerciseEditor',
     screen: PatientExerciseEditor,
+  },
+  ProgressImageViewer: {
+    name: 'ProgressImageViewer',
+    screen: ProgressImageViewer,
   },
 };
 

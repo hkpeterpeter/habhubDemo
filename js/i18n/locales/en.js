@@ -58,6 +58,9 @@ const en = {
   titlePatientExerciseEditor: 'Exercise Editor',
   ExerciseVideoList: 'Exercise Video List',
 
+  // Component: titleProgressImageViewer
+  titleProgressImageViewer: 'Image Record',
+
 };
 
 export default en;

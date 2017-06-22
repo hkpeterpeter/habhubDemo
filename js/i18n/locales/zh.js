@@ -58,6 +58,8 @@ const zh = {
   titlePatientExerciseEditor: '活動編輯器',
   ExerciseVideoList: '活動短片',
 
+  // Component: titleProgressImageViewer
+  titleProgressImageViewer: '影像紀錄',
 };
 
 export default zh;

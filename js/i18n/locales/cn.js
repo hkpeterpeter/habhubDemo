@@ -59,6 +59,9 @@ const cn = {
   titlePatientExerciseEditor: '活动编辑器',
   ExerciseVideoList: '活动短片',
 
+  // Component: titleProgressImageViewer
+  titleProgressImageViewer: '影像纪录',
+
 };
 
 export default cn;

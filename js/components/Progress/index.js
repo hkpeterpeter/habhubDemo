@@ -20,6 +20,8 @@ import { connect } from 'react-redux';
 import styles from './styles';
 import I18n from '../../i18n/I18n';
 
+import { setExerciseID } from '../../actions/client';
+
 class Progress extends Component { // eslint-disable-line
 
   static propTypes = {
@@ -28,6 +30,7 @@ class Progress extends Component { // eslint-disable-line
     users: PropTypes.arrayOf(PropTypes.object).isRequired,
     exercises: PropTypes.arrayOf(PropTypes.object).isRequired,
     exerciseTemplates: PropTypes.arrayOf(PropTypes.object).isRequired,
+    setExerciseID: PropTypes.func.isRequired,
   }
 
   render() {
@@ -121,7 +124,13 @@ class Progress extends Component { // eslint-disable-line
                     iconLeft
                     bordered
                     info
-                    onPress={() => {}}
+                    onPress={() => {
+                      if (item.images.length > 0) {
+                        this.props.setExerciseID(item.id);
+                        navigation.navigate('ProgressImageViewer',
+                        { refresh: () => { this.forceUpdate(); } });
+                      }
+                    }}
                   >
                     <Icon name="ios-camera" />
                     <Text>{item.images.length}</Text>
@@ -129,12 +138,11 @@ class Progress extends Component { // eslint-disable-line
                 </Right>
               </CardItem>
 
-              {item.images.length > 0 && <Image
-                // source={require(item.images[0])}
+              {/* {item.images.length > 0 && <Image
                 source={{ uri: item.images[0], isStatic: true }}
                 style={styles.cardImage}
                 resizeMode="contain"
-              />}
+              />} */}
 
             </Card>),
           )}
@@ -148,6 +156,7 @@ class Progress extends Component { // eslint-disable-line
 function bindActions(dispatch) {
   return {
     // func: () => dispatch(func()),
+    setExerciseID: id => dispatch(setExerciseID(id)),
   };
 }
 

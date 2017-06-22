@@ -20,7 +20,7 @@ const makeUser = (
 const users = [
   {
     ...makeUser('peter', 'Peter', 'Chung', 'Patient'),
-    exerciseIDs: [0, 1, 2, 3, 4, 5],
+    exerciseIDs: [0, 1],
   },
   {
     ...makeUser('tiffany', 'Tiffany', 'Lee', 'Therapist'),

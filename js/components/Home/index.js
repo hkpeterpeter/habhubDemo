@@ -144,7 +144,8 @@ class Home extends Component { // eslint-disable-line
               cardBody
               button
               style={styles.cardImageWrapper}
-              onPress={() => navigation.navigate(card.route, { refresh: () => { this.forceUpdate(); } })}
+              onPress={() => navigation.navigate(card.route,
+                { refresh: () => { this.forceUpdate(); } })}
             >
               <Image
                 source={card && card.image}
